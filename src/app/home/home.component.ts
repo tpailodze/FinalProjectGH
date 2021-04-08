@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     {
       hotelId: 1,
       hotelName: 'ABC',
-      imgUrl: ''
+      imgUrl: '/assets/iconfinder_facebook_605511.png'
     },
     {
       hotelId: 2,
