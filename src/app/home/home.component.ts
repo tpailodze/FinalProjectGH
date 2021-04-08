@@ -31,22 +31,22 @@ export class HomeComponent implements OnInit {
     {
       hotelId: 1,
       hotelName: 'ABC',
-      imgUrl: '/assets/iconfinder_facebook_605511.png'
+      imgUrl: '../../assets/france.jpg'
     },
     {
       hotelId: 2,
       hotelName: 'DFG',
-      imgUrl: ''
+      imgUrl: '../../assets/greece.jpg'
     },
     {
       hotelId: 3,
       hotelName: '',
-      imgUrl: ''
+      imgUrl: '../../assets/italy.jpg'
     },
     {
       hotelId: 4,
       hotelName: '',
-      imgUrl: ''
+      imgUrl: '../../assets/spain.jpg'
     },
    
   ]

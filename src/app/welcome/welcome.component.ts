@@ -9,7 +9,7 @@ import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
 export class WelcomeComponent implements OnInit {
 
   slides = [
-    {'image': "/assets/iconfinder_facebook_605511.png"},
+    {'image': "../../assets/spain.jpg"},
     {'image': '/assets/greece.jpg'},
     {'image': '/assets/france.jpg'} 
   ];
