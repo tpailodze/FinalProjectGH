@@ -30,22 +30,26 @@ export class HomeComponent implements OnInit {
   hotelsArray = [
     {
       hotelId: 1,
-      hotelName: 'ABC',
+      hotelName: 'Denvil Hotel',
+      hotelCountry: 'Italy',
       imgUrl: '../../assets/france.jpg'
     },
     {
       hotelId: 2,
-      hotelName: 'DFG',
+      hotelName: 'Denvil Hotel',
+      hotelCountry: 'Italy',
       imgUrl: '../../assets/greece.jpg'
     },
     {
       hotelId: 3,
-      hotelName: '',
+      hotelName: 'Denvil Hotel',
+      hotelCountry: 'Italy',
       imgUrl: '../../assets/italy.jpg'
     },
     {
       hotelId: 4,
-      hotelName: '',
+      hotelName: 'Denvil Hotel',
+      hotelCountry: 'Italy',
       imgUrl: '../../assets/spain.jpg'
     },
    

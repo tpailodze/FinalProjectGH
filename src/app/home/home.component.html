@@ -1,3 +1,12 @@
+<div class="filter-wrapper">
+  <form>
+    <label for="name">Hotel Name</label>
+    <select id="name"  placeholder="name">
+      <option *ngForm></option>
+    </select>
+  </form>
+</div>
+
 <section class="hotels">
     <div class="wrapper">
       <div class="filters">
@@ -11,11 +20,15 @@
         <ul class="hotels-ul">
           <li class="hotels-li" *ngFor="let hotel of hotelsArray">
             <div class="hotel-image-holder">
-              <img [src]="hotel.imgUrl">
+              <img  [src]="hotel.imgUrl">
             </div>
-            <h3 >{{hotel.hotelName}}</h3>
+            <a [routerLink]="'/single-hotel/' + hotel.hotelId">see more...</a>
+            <h1 class="name">{{hotel.hotelName}}</h1>
+            <H1 class="country">{{hotel.hotelCountry}}</H1>
           </li>
         </ul>
       </div>
     </div>
   </section>
+  <router-outlet></router-outlet>
+  

@@ -1,1 +1,57 @@
-<p>single-hotel works!</p>
+<section class="single-hotel">
+     <div class="single-hotel-wrapper">
+         <div class="single-hotel-image">
+             <img [src]='singleHotel.imgUrl'>
+         </div>
+         <div class="info">
+             <div class='hotelname'>
+                 <h4> Hotel Name</h4>
+                 <p>{{singleHotel.hotelName}}</p>
+            </div>
+             <div class='hotelcountry'>
+                 <h4>Country:</h4>
+                 <p>{{singleHotel.hotelCountry}}</p>
+            </div>
+             <div class="stars">{{singleHotel.rating}}</div>
+             <div class="availability" >
+                 <p class="yes" *ngIf="singleHotel.availability">Room Available</p>
+                 <p class="not" *ngIf="!singleHotel.availability">Room not Available</p>
+             </div>
+             <div class="pettsallowed" >
+                <p class="yes" *ngIf="singleHotel.petsallowed">Pets Allowed</p>
+                <p class="not" *ngIf="!singleHotel.petsallowed">Pets Not Allowed</p>
+            </div>
+            <div class="price">
+                <h4>Price:</h4>
+                <p>{{singleHotel.price}}</p>
+            </div>
+            <div class='roomstype'>
+                 <label>Rooms Type</label>
+                 <select class='rooms'>
+                     <options *ngFor="let type of singleHotel.roomType" [value]='type'>
+                        {{type}}
+                     </options>
+                 </select>
+             </div>
+             <div class="descript">
+                 <h4>Description:</h4>
+                 <p>{{singleHotel.description}}</p>
+             </div>
+             <div class="choosedays">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Start Date</mat-label>
+                    <input formControlName="dob" matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>End Date</mat-label>
+                    <input formControlName="dob" matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <button class="book" >Book the room</button>
+         </div>
+     </div>    
+</section>

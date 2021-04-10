@@ -20,6 +20,10 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule} from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
+
 
 
 @NgModule({
@@ -31,8 +35,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     WelcomeComponent,
     AdminComponent,
     SingleHotelComponent,
-    
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -47,8 +51,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatCardModule,
     MatButtonModule,
     MatDatepickerModule,
-    MatNativeDateModule
-
+    MatNativeDateModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

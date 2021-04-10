@@ -1,4 +1,6 @@
-
+:focus{
+  outline:none
+}
 
 .hotels{
   font-size: 16px;
@@ -58,6 +60,7 @@
           &:hover{
             box-shadow: 5px 6px 10px -2px black;
             transform: translate(0, -3px);
+            
           }
           img{
             width: 100%;
@@ -67,3 +70,18 @@
     }
   }
 }
+.hotel-image-holder img {
+  width: 40px;
+  height: 350px;}
+
+  .name {
+  color: #eb135a;
+  font-size: 20px;
+  font-weight: bolder;
+  }
+  .country {
+    color: #eb135a;
+    }
+
+  
+  
