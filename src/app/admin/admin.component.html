@@ -1,1 +1,23 @@
-<p>admin works!</p>
+<div class=container>
+    <form (ngSubmit)="addHotel()">
+        <div>
+            <label>name></label>
+            <input type="text" name='name'  [(ngModel)]='hotel.name'>
+        </div>
+        <div>
+            <label>Country</label>
+            <input type="text" name='country'  [(ngModel)]='hotel.country'>
+        </div>
+        <div>
+            <label>Price></label>
+            <input type="text" name='price'  [(ngModel)]='hotel.price'>
+        </div>
+        <div>
+            <label>name></label>
+            <input type="text" name='room'  [(ngModel)]='hotel.roomType'>
+        </div>
+        <div class='button'>
+            <button type=submit>Add Hotel</button>
+        </div>
+    </form>
+</div>

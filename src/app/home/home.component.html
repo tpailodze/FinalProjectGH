@@ -22,7 +22,7 @@
             <div class="hotel-image-holder">
               <img  [src]="hotel.imgUrl">
             </div>
-            <a [routerLink]="'/single-hotel/' + hotel.hotelId">see more...</a>
+            <a [routerLink]="'/details/' + hotel.hotelId">see more...</a>
             <h1 class="name">{{hotel.hotelName}}</h1>
             <H1 class="country">{{hotel.hotelCountry}}</H1>
           </li>

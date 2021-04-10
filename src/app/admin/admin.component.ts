@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFireDatabase} from '@angular/fire/database';
+import {Observable}  from 'rxjs'
 
 @Component({
   selector: 'app-admin',
@@ -7,7 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  title: 'firebase';
+
+  hotel= {
+    name: '',
+    country: '',
+    price: '',
+    roomType: '',
+
+  }
+
+  hotels: Observable<any[]>
+
+  constructor(private db:AngularFireDatabase) {
+    this.hotels = db.list('hotelData').valueChanges();
+    this.hotels.subscribe(data => {
+      console.log(data)
+    })
+   }
+
+   addHotel(){
+     this.db.list('hotelData').push(this.hotel)
+     this.hotel.name = '';
+     this.hotel.country = '';
+     this.hotel.price = ''
+  }
 
   ngOnInit(): void {
   }
