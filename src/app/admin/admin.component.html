@@ -1,43 +1,31 @@
-<!-- <div class=container>
-    <form (ngSubmit)="addHotel()">
-        <div>
-            <label>name</label>
-            <input type="text" name='name'  [(ngModel)]='hotel.name'>
-        </div>
-        <div>
-            <label>Country</label>
-            <input type="text" name='country'  [(ngModel)]='hotel.country'>
-        </div>
-        <div>
-            <label>Price</label>
-            <input type="text" name='price'  [(ngModel)]='hotel.price'>
-        </div>
-        <div>
-            <label>name></label>
-            <input type="text" name='room'  [(ngModel)]='hotel.roomType'>
-        </div>
-        <div class='button'>
-            <button type=submit>Add Hotel</button>
-        </div>
-    </form>
-</div> -->
 
-<form class="example-form">
+<form (ngSubmit)="addHotel()" class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>Hotel Name</mat-label>
-      <input matInput placeholder="Name" value="Name">
+      <input matInput placeholder="Name" value="Name" name="name" [(ngModel)]="hotel.hotelName">
     </mat-form-field>
-  
     <mat-form-field class="example-full-width">
         <mat-label>Hotel Country</mat-label>
-        <input matInput placeholder="Country" value="Country">
+        <input matInput placeholder="Country" value="Country" name="country" [(ngModel)]="hotel.hotelCountry">
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Hotel Description</mat-label>
-        <input matInput placeholder="Description" value="Description">
+        <input matInput placeholder="Description" value="Description" name="description" [(ngModel)]="hotel.description">
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Stars</mat-label>
-        <input matInput placeholder="Stars" value="Stars">
+        <input matInput placeholder="Stars" value="Stars" name="stars" [(ngModel)]="hotel.stars">
       </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Room Type</mat-label>
+        <input matInput placeholder="Room Type" value="Room Type" name="roomtype" [(ngModel)]="hotel.roomType">
+      </mat-form-field>
+      <br>
+    
+      <input class="choose"  type="file" (change)="upload($event)" accept="*.png.jpg" >
+    
+      <button  class="upload" (click)="uploadImage()">Upload File</button>
+     
+
+      <Button  (click)="addHotel()" class="button">Submit</Button>
   </form>

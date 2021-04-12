@@ -1,33 +1,33 @@
 
 <div class="filtersContainer">
-  <mat-form-field appearance="fill">
+  <mat-form-field class="field" appearance="fill">
     <mat-label>hotel name</mat-label>
     <mat-select>
-       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
+       <mat-option *ngFor="let hotel of hotelsArray" [value]="hotel.value">
         {{hotel.hotelName}}
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field class="field" appearance="fill">
     <mat-label>hotel country</mat-label>
     <mat-select>
-       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
+       <mat-option *ngFor="let hotel of hotelsArray" [value]="hotel.value">
         {{hotel.hotelCountry}}
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field  class="field" appearance="fill">
     <mat-label>Stars</mat-label>
     <mat-select>
-       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
+       <mat-option *ngFor="let hotel of hotelsArray" [value]="hotel.value">
         {{hotel.rating}}
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field class="field" appearance="fill">
     <mat-label>Room Type</mat-label>
     <mat-select>
-       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
+       <mat-option *ngFor="let hotel of hotelsArray" [value]="hotel.value">
         {{hotel.roomType}}
       </mat-option>
     </mat-select>
