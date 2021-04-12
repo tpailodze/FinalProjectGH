@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {Observable}  from 'rxjs'
 
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',

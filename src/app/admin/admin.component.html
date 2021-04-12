@@ -1,7 +1,7 @@
-<div class=container>
+<!-- <div class=container>
     <form (ngSubmit)="addHotel()">
         <div>
-            <label>name></label>
+            <label>name</label>
             <input type="text" name='name'  [(ngModel)]='hotel.name'>
         </div>
         <div>
@@ -9,7 +9,7 @@
             <input type="text" name='country'  [(ngModel)]='hotel.country'>
         </div>
         <div>
-            <label>Price></label>
+            <label>Price</label>
             <input type="text" name='price'  [(ngModel)]='hotel.price'>
         </div>
         <div>
@@ -20,4 +20,24 @@
             <button type=submit>Add Hotel</button>
         </div>
     </form>
-</div>
+</div> -->
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Hotel Name</mat-label>
+      <input matInput placeholder="Name" value="Name">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+        <mat-label>Hotel Country</mat-label>
+        <input matInput placeholder="Country" value="Country">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Hotel Description</mat-label>
+        <input matInput placeholder="Description" value="Description">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Stars</mat-label>
+        <input matInput placeholder="Stars" value="Stars">
+      </mat-form-field>
+  </form>
