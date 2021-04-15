@@ -6,7 +6,6 @@ import {observable} from 'rxjs';
 import {map} from 'rxjs/operators'
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,8 +13,16 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 })
 export class HomeComponent implements OnInit {
 
-  hotels: any ;
+  filter= {
+    namefilter: '',
+    countryfilter: '',
+    starsfilter: '',
+    roomtypefilter: ''
+   }
+  
 
+  hotels: any ;
+ 
   gethotelList(){
     this.ps.getInfolist().snapshotChanges().pipe(
       map(data=>{
@@ -30,9 +37,17 @@ export class HomeComponent implements OnInit {
 
   }
 
+  filterHotels(){
+    console.log(this.filter)
+  }
+
   constructor(private db : AngularFireDatabase, private ps: HotelDataService)  {}
 
   ngOnInit(): void {
-      this.gethotelList()
+      this.gethotelList();
+      
   }
+
 }
+
+

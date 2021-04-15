@@ -3,6 +3,7 @@
     justify-content: flex-start;
     align-items:center;
     margin-bottom: 60px;
+    margin-top: 50px;
     .single-hotel-image{
         margin-left: 60px;}
     .info{
@@ -10,24 +11,70 @@
         width: 500px
     }
 
-    }
+}
 
 .single-hotel-image img{
     width: 500px;
     height: 500px
 }
 
-.hotelname,  .hotelcountry {
+.hotelname,  .hotelcountry  {
     display:flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: grey;
+    h4{
+        background-color: #f09ebc;
+        border-radius: 7px;
+        padding: 10px;
+        color: white
+      }
+
+    p {
+        color: gray;
+        font-weight: bold;
+        
+    }
+
 }
 
-.hotelcountry, .price, .stars, .roomType, .descript, .chooseday{
+.price, .stars, .roomType, .descript {
     display: flex;
     justify-content: space-between;
     align-items:center;
-    color: red
-
+    h4{
+    background-color: #f09ebc;
+    border-radius: 7px;
+    padding: 10px;
+    color: white
+  }
+  p {
+    font-weight: bold;
+    color: gray;
+}
 }
 
+.choosedays {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .full-width {
+        margin: 10px;
+    }
+}
+
+.book{
+    background-color: #ed266f;
+    border-radius: 6px;
+    padding: 10px;
+    width:200px;
+    height: 50px;
+    border: none;
+    font-weight: bold;
+    color: white
+}
+.numberofdays  label {
+    width : 200px;
+    color: gray;
+
+}

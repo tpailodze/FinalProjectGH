@@ -1,16 +1,17 @@
 
-<div class="filtersContainer">
+
+<div (ngSubmit)="filterHotels" class="filtersContainer">
   <mat-form-field class="field" appearance="fill">
     <mat-label>hotel name</mat-label>
-    <mat-select>
-       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
+    <mat-select name="name" [(ngModel)]='filter.namefilter'>
+       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value"  >
         {{hotel.hotelName}}
       </mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field class="field" appearance="fill">
     <mat-label>hotel country</mat-label>
-    <mat-select>
+    <mat-select name="country" [(ngModel)]='filter.countryfilter'>
        <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
         {{hotel.hotelCountry}}
       </mat-option>
@@ -18,20 +19,23 @@
   </mat-form-field>
   <mat-form-field  class="field" appearance="fill">
     <mat-label>Stars</mat-label>
-    <mat-select>
+    <mat-select name="stars" [(ngModel)]='filter.starsfilter'>
        <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
-        {{hotel.rating}}
+        {{hotel.stars}}
       </mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field class="field" appearance="fill">
     <mat-label>Room Type</mat-label>
-    <mat-select>
+    <mat-select name="roomtype" [(ngModel)]='filter.roomtypefilter'>
        <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
         {{hotel.roomType}}
       </mat-option>
     </mat-select>
   </mat-form-field>
+  <div class="search" >
+    <button (click)="filterHotels()" type="submit" >Search</button>
+  </div>
 </div>
 
 <section class="hotels">
