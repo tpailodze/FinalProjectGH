@@ -29,25 +29,28 @@ export class AdminComponent implements OnInit {
   }
 
  
-
   ngOnInit(): void {
   }
   
   hotel = {
+    hotelId:"",
     hotelName: "",
     hotelCountry: "",
     stars: "",
     roomType: "",
-    description: ""
+    description: "",
+    imgUrl: ""
   }
 
   addHotel(){
     this.db.addHotel(this.hotel);
+    this.hotel.hotelId="";
     this.hotel.hotelName="";
     this.hotel.hotelCountry="";
     this.hotel.stars="";
     this.hotel.roomType="";
-    this.hotel.description=""
+    this.hotel.description="";
+    this.hotel.imgUrl=""
   }
 
   hotels = [];

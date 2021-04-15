@@ -3,7 +3,7 @@
   <mat-form-field class="field" appearance="fill">
     <mat-label>hotel name</mat-label>
     <mat-select>
-       <mat-option *ngFor="let hotel of hotelsArray" [value]="hotel.value">
+       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
         {{hotel.hotelName}}
       </mat-option>
     </mat-select>
@@ -11,7 +11,7 @@
   <mat-form-field class="field" appearance="fill">
     <mat-label>hotel country</mat-label>
     <mat-select>
-       <mat-option *ngFor="let hotel of hotelsArray" [value]="hotel.value">
+       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
         {{hotel.hotelCountry}}
       </mat-option>
     </mat-select>
@@ -19,7 +19,7 @@
   <mat-form-field  class="field" appearance="fill">
     <mat-label>Stars</mat-label>
     <mat-select>
-       <mat-option *ngFor="let hotel of hotelsArray" [value]="hotel.value">
+       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
         {{hotel.rating}}
       </mat-option>
     </mat-select>
@@ -27,7 +27,7 @@
   <mat-form-field class="field" appearance="fill">
     <mat-label>Room Type</mat-label>
     <mat-select>
-       <mat-option *ngFor="let hotel of hotelsArray" [value]="hotel.value">
+       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
         {{hotel.roomType}}
       </mat-option>
     </mat-select>
@@ -36,26 +36,19 @@
 
 <section class="hotels">
     <div class="wrapper">
-      <div class="filters">
-        <ul class="filters-ul">
-          <li class="filters-li" *ngFor="let filter of filtersArray">
-            <span>{{filter.filterName}}</span>
-          </li>
-        </ul>
-      </div>
-      <div class="hotels-holder">
-        <ul class="hotels-ul">
-          <li class="hotels-li" *ngFor="let hotel of hotelsArray">
-            <div class="hotel-image-holder">
-              <img  [src]="hotel.imgUrl">
-            </div>
-            <a [routerLink]="'/details/' + hotel.hotelId">see more...</a>
-            <h1 class="name">{{hotel.hotelName}}</h1>
-            <H1 class="country">{{hotel.hotelCountry}}</H1>
-          </li>
-        </ul>
-      </div>
+        <div class="hotels-holder">
+          <ul class="hotels-ul">
+            <li class="hotels-li" *ngFor="let hotel of hotels">
+              <div class="hotel-image-holder">
+                 <img  [src]="hotel.imgUrl">
+              </div>
+              <a [routerLink]="'/details/' + hotel.key">see more...</a>
+              <h1 class="name">{{hotel.hotelName}}</h1>
+              <H1 class="country">{{hotel.hotelCountry}}</H1>
+            </li>
+          </ul>
+       </div>
     </div>
-  </section>
+  </section>  
   <router-outlet></router-outlet>
   

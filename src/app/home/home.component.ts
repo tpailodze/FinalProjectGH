@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {AngularFireDatabase} from '@angular/fire/database';
+import {HotelDataService} from '../hotel-data.service';
+import {observable} from 'rxjs';
+import {map} from 'rxjs/operators'
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-home',
@@ -8,86 +14,25 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  hotels: any ;
+
+  gethotelList(){
+    this.ps.getInfolist().snapshotChanges().pipe(
+      map(data=>{
+       return data.map((info=> ({
+         key:info.key, ...(info.payload.val() as {} ),
+       })))
+     })
+    ).subscribe(data=>{
+     this.hotels = data;
+     console.log(this.hotels)
+    });
+
+  }
+
+  constructor(private db : AngularFireDatabase, private ps: HotelDataService)  {}
 
   ngOnInit(): void {
+      this.gethotelList()
   }
-  filtersArray = [
-    {
-      filterId: 1,
-      filterName: 'Popular Hotels'
-    },
-    {
-      filterId: 2,
-      filterName: '5 stars'
-    },
-    {
-      filterId: 3,
-      filterName: 'Pets allowed'
-    },
-   
-  ]
-
-  hotelsArray = [
-    {
-      hotelId: 1,
-      hotelName: 'Denvil Hotel',
-      hotelCountry: 'France',
-      imgUrl: '../../assets/france.jpg',
-      rating: '4 stars',
-      availability: true,
-      petsallowed: true,
-      price: "105",
-      datefrom: '',
-      dateuntill: '',
-      roomType:['single', 'double', 'family', 'king Size'],
-      description:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure optio mollitia veritatis dolorum officia laudantium. Officiis hic, provident autem iste quos tenetur ratione. Voluptas, eius perspiciatis vero iusto voluptate possimus!'
-    
-    },
-    {
-      hotelId: 2,
-      hotelName: 'Denvil Hotel',
-      hotelCountry: 'Greece',
-      imgUrl: '../../assets/france.jpg',
-      rating: '5 stars',
-      availability: true,
-      petsallowed: true,
-      price: "105",
-      datefrom: '',
-      dateuntill: '',
-      roomType:['single', 'double', 'family', 'king Size'],
-      description:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure optio mollitia veritatis dolorum officia laudantium. Officiis hic, provident autem iste quos tenetur ratione. Voluptas, eius perspiciatis vero iusto voluptate possimus!'
-    },
-    {
-      hotelId: 3,
-      hotelName: 'Denvil Hotel',
-      hotelCountry: 'Italy',
-      imgUrl: '../../assets/france.jpg',
-      rating: '3 stars',
-      availability: true,
-      petsallowed: false,
-      price: "105",
-      datefrom: '',
-      dateuntill: '',
-      roomType:['single', 'double', 'family', 'king Size'],
-      description:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure optio mollitia veritatis dolorum officia laudantium. Officiis hic, provident autem iste quos tenetur ratione. Voluptas, eius perspiciatis vero iusto voluptate possimus!'
-    },
-    {
-      hotelId: 4,
-      hotelName: 'Denvil Hotel',
-      hotelCountry: 'Spain',
-      imgUrl: '../../assets/france.jpg',
-      rating: '5 stars',
-      availability: false,
-      petsallowed: false,
-      price: "105",
-      datefrom: '',
-      dateuntill: '',
-      roomType:['single', 'double', 'family', 'king Size'],
-      description:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure optio mollitia veritatis dolorum officia laudantium. Officiis hic, provident autem iste quos tenetur ratione. Voluptas, eius perspiciatis vero iusto voluptate possimus!'
-    },
-   
-  ]
-
-
 }

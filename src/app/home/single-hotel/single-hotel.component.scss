@@ -1,0 +1,33 @@
+.single-hotel-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    margin-bottom: 60px;
+    .single-hotel-image{
+        margin-left: 60px;}
+    .info{
+        margin-left: 100px;
+        width: 500px
+    }
+
+    }
+
+.single-hotel-image img{
+    width: 500px;
+    height: 500px
+}
+
+.hotelname,  .hotelcountry {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hotelcountry, .price, .stars, .roomType, .descript, .chooseday{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    color: red
+
+}
+

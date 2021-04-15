@@ -32,18 +32,9 @@ export class HotelDataService {
  this.db.list(this.dbpath).update(hotelObject.od, hotelObject)
  }
 
-//  getInfoList(){
-//   this.db.getInfolist().snapshotChanges().pipe(
-//     map(data=>{
-//      return data.map((info=> ({
-//        key:info.key, ...(info.payload.val() as {} ),
-//      })))
-//    })
-//   ).subscribe(data=>{
+ getHotel(hotelkey){
+   return this.db.object(this.dbpath + '/'+ hotelkey)
 
-    
-//    this.hotel = data;
-//    console.log(this.hotel)
-//   });
-// }
+ }
+
 }

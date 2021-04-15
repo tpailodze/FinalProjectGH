@@ -1,3 +1,6 @@
+<form  class="example-form">
+    
+    
 <section class="single-hotel">
      <div class="single-hotel-wrapper">
          <div class="single-hotel-image">
@@ -9,30 +12,21 @@
                  <p>{{singleHotel.hotelName}}</p>
             </div>
              <div class='hotelcountry'>
-                 <h4>Country:</h4>
+                 <h4> Hotel Country:</h4>
                  <p>{{singleHotel.hotelCountry}}</p>
             </div>
-             <div class="stars">{{singleHotel.rating}}</div>
-             <div class="availability" >
-                 <p class="yes" *ngIf="singleHotel.availability">Room Available</p>
-                 <p class="not" *ngIf="!singleHotel.availability">Room not Available</p>
-             </div>
-             <div class="pettsallowed" >
-                <p class="yes" *ngIf="singleHotel.petsallowed">Pets Allowed</p>
-                <p class="not" *ngIf="!singleHotel.petsallowed">Pets Not Allowed</p>
-            </div>
-            <div class="price">
-                <h4>Price:</h4>
+             <div class="stars">
+                <h4>Number of Stars:</h4>
+                <p>{{singleHotel.stars}}</p>
+            </div>  
+            <div>
+                <h4>Room Price:</h4>
                 <p>{{singleHotel.price}}</p>
             </div>
-            <div class='roomstype'>
-                 <label>Rooms Type</label>
-                 <select class='rooms'>
-                     <options *ngFor="let type of singleHotel.roomType" [value]='type'>
-                        {{type}}
-                     </options>
-                 </select>
-             </div>
+            <div class="roomType">
+                <h4>Room Type:</h4>
+                <p>{{singleHotel.roomType}}</p>
+            </div>
              <div class="descript">
                  <h4>Description:</h4>
                  <p>{{singleHotel.description}}</p>

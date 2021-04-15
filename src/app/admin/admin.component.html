@@ -1,6 +1,10 @@
 
 <form (ngSubmit)="addHotel()" class="example-form">
     <mat-form-field class="example-full-width">
+        <mat-label>Hotel Id</mat-label>
+        <input matInput placeholder="ID" value="hotelId" name="hotelId" [(ngModel)]="hotel.hotelId">
+      </mat-form-field>
+    <mat-form-field class="example-full-width">
       <mat-label>Hotel Name</mat-label>
       <input matInput placeholder="Name" value="Name" name="name" [(ngModel)]="hotel.hotelName">
     </mat-form-field>
@@ -20,12 +24,15 @@
         <mat-label>Room Type</mat-label>
         <input matInput placeholder="Room Type" value="Room Type" name="roomtype" [(ngModel)]="hotel.roomType">
       </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Image URL</mat-label>
+        <input matInput placeholder="imgUrl" value="imgUrl" name="roomtype" [(ngModel)]="hotel.imgUrl">
+      </mat-form-field>
       <br>
     
       <input class="choose"  type="file" (change)="upload($event)" accept="*.png.jpg" >
     
-      <button  class="upload" (click)="uploadImage()">Upload File</button>
+      <button  class="upload" (click)="uploadImage()"  (click)="addHotel()">Upload File and Add Hotel</button>
      
 
-      <Button  (click)="addHotel()" class="button">Submit</Button>
   </form>
