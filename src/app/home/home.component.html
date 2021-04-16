@@ -4,7 +4,7 @@
   <mat-form-field class="field" appearance="fill">
     <mat-label>hotel name</mat-label>
     <mat-select name="name" [(ngModel)]='filter.namefilter'>
-       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value"  >
+       <mat-option *ngFor="let hotel of hotels" [value]="hotel.hotelName"  >
         {{hotel.hotelName}}
       </mat-option>
     </mat-select>
@@ -12,7 +12,7 @@
   <mat-form-field class="field" appearance="fill">
     <mat-label>hotel country</mat-label>
     <mat-select name="country" [(ngModel)]='filter.countryfilter'>
-       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
+       <mat-option *ngFor="let hotel of hotels" value="hotel">
         {{hotel.hotelCountry}}
       </mat-option>
     </mat-select>
@@ -20,7 +20,7 @@
   <mat-form-field  class="field" appearance="fill">
     <mat-label>Stars</mat-label>
     <mat-select name="stars" [(ngModel)]='filter.starsfilter'>
-       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
+       <mat-option *ngFor="let hotel of hotels" value="hotel.value">
         {{hotel.stars}}
       </mat-option>
     </mat-select>
@@ -28,7 +28,7 @@
   <mat-form-field class="field" appearance="fill">
     <mat-label>Room Type</mat-label>
     <mat-select name="roomtype" [(ngModel)]='filter.roomtypefilter'>
-       <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
+       <mat-option *ngFor="let hotel of hotels" value='hotels.roomType'>
         {{hotel.roomType}}
       </mat-option>
     </mat-select>

@@ -25,6 +25,8 @@ import { AngularFireDatabaseModule} from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {AngularFireStorageModule} from "@angular/fire/storage";
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth'
 
 
 
@@ -61,6 +63,8 @@ import {AngularFireStorageModule} from "@angular/fire/storage";
     FormsModule,
     MDBBootstrapModule,
     AngularFireStorageModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule
 
 
   ],

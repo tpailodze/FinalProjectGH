@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {AngularFireAuth} from '@angular/fire/auth';
+import firebase from 'firebase/app'
+
 
 @Component({
   selector: 'app-login',
@@ -9,7 +12,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private afAuth: AngularFireAuth) { }
 
   loginForm = this.formBuilder.group({
     Name: [''],
@@ -19,4 +22,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  doFacebookLogin(){
+    return new Promise<any>((resolve, reject) => {
+let provider = new firebase.auth.FacebookAuthProvider();
+this.afAuth.signInWithPopup(provider).then(
+  response=>{
+    console.log(response);
+    resolve(response);
+  },
+  error => {
+    console.log(error)
+    reject(error)
+    }
+   )
+  })
+ }
 }
