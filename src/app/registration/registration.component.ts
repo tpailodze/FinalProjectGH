@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {AuthService} from '../auth.service'
 
 @Component({
   selector: 'app-registration',
@@ -9,21 +10,21 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private as: AuthService) { }
 
-  profileForm = this.formBuilder.group({
-   firstName: [''],
-   lastName: [''],
-   password: [''],
-   dob: [''],
-   gender: ['']
-  })
-
-  saveform(){
-    console.log(this.profileForm.value)
+  profileForm = {
+   Email: '',
+   Password: '',
+   
   }
 
+
+
   ngOnInit(): void {
+  }
+
+  register(){
+    this.as.standardSignUp(this.profileForm)
   }
 
 }

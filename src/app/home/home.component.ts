@@ -37,8 +37,16 @@ export class HomeComponent implements OnInit {
 
   }
 
+  filteredHotel:[];
+
   filterHotels(){
+    for (let i=0; i<this.hotels.length; i++){
+      if(this.hotels.name = this.filter.namefilter){
+        this.filteredHotel.push(this.hotels[i])
+      }
+    }
     console.log(this.filter)
+    console.log(this.hotels)
   }
 
   constructor(private db : AngularFireDatabase, private ps: HotelDataService)  {}

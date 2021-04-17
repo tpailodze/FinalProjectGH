@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {AngularFireAuth} from '@angular/fire/auth';
-import firebase from 'firebase/app'
+import {AuthService} from '../auth.service'
 
 
 @Component({
@@ -12,29 +11,28 @@ import firebase from 'firebase/app'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder, private afAuth: AngularFireAuth) { }
+  constructor(private formBuilder:FormBuilder, private as: AuthService) { 
+  }
 
-  loginForm = this.formBuilder.group({
-    Name: [''],
-    password: [''],
-   })
+
+  loginForm = {
+    Email: '',
+    password: '',
+   }
 
   ngOnInit(): void {
   }
 
-  doFacebookLogin(){
-    return new Promise<any>((resolve, reject) => {
-let provider = new firebase.auth.FacebookAuthProvider();
-this.afAuth.signInWithPopup(provider).then(
-  response=>{
-    console.log(response);
-    resolve(response);
-  },
-  error => {
-    console.log(error)
-    reject(error)
-    }
-   )
-  })
+  logOut(){
+    this.as.logout()
+  }
+
+  fbAuth(){
+    this.as.doFacebookLogin()
  }
+ 
+ standardSighIn(data){
+   this.as.standardSighIn(data)
+ }
+
 }

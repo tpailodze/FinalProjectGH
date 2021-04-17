@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" class="form-container">
+<form  class="form-container">
     <mat-card>
         <mat-card-header>
             <mat-card-title>LogIn Form</mat-card-title>
@@ -7,22 +7,28 @@
             <div class="row">
                 <div class="col-md-6">
                     <mat-form-field class="full-width">
-                        <input formControlName="Name" matInput placeholder="Name">
+                        <input  name="Email" [(ngModel)]="loginForm.Email" matInput placeholder="Email">
                     </mat-form-field>
                 </div>
             </div> 
             <div class="row">
                 <div class="col-sm-6">
                     <mat-form-field class="full-width">
-                        <input  type="password" formControlName="password" matInput placeholder="Password"> 
+                        <input  type="password" name="password" [(ngModel)]="loginForm.password" matInput placeholder="Password"> 
                     </mat-form-field> 
                 </div>
             </div> 
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="accent">Log In</button>
+            <button type='submit' mat-raised-button color="accent">Log In</button>
         </mat-card-actions>
+        
     </mat-card>
 </form>
+<div class="FBregist">
+    <img  (click)='fbAuth()' src="../../assets/fbRegist.png">
+</div>
+<div>
+    <button  class="logOut" (click)='logOut()'>Log Out</button>
+</div>
 
-<button (click)='doFacebookLogin()'>Auth with FB</button>
