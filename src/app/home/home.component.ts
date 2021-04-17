@@ -37,16 +37,20 @@ export class HomeComponent implements OnInit {
 
   }
 
-  filteredHotel:[];
+  filteredHotel: any;
+
+
 
   filterHotels(){
     for (let i=0; i<this.hotels.length; i++){
-      if(this.hotels.name = this.filter.namefilter){
-        this.filteredHotel.push(this.hotels[i])
+      if(this.hotels[i].hotelName == this.filter.namefilter|| this.hotels[i].HotelCountry == this.filter.countryfilter  
+        || this.hotels[i].stars == this.filter.starsfilter || this.hotels[i].roomType == this.filter.roomtypefilter   ){
+        this.filteredHotel.push(this.hotels[i]);
+        console.log(this.filteredHotel)
+        this.hotels = this.filteredHotel;
+        console.log(this.hotels)
       }
     }
-    console.log(this.filter)
-    console.log(this.hotels)
   }
 
   constructor(private db : AngularFireDatabase, private ps: HotelDataService)  {}
